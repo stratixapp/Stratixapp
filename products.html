@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products — Stratix Ecosystem</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="closeMobile()">Home</a>
+  <a href="products.html" onclick="closeMobile()">Products</a>
+  <a href="about.html" onclick="closeMobile()">About</a>
+  <a href="solutions.html" onclick="closeMobile()">Solutions</a>
+  <a href="contact.html" onclick="closeMobile()">Contact</a>
+</div>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo">STRATIX</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="solutions.html">Solutions</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="login.html" class="nav-cta">Admin</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleMobile()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="section-label">12 Products</div>
+  <h1>The Stratix Ecosystem</h1>
+  <p>Modern software for every business need — from GST compliance to legal documents, business management to spiritual wellness.</p>
+</div>
+
+<section style="padding-top:0">
+  <div class="products-filter">
+    <button class="filter-btn active" data-filter="all">All Products</button>
+    <button class="filter-btn" data-filter="business">Business</button>
+    <button class="filter-btn" data-filter="finance">Finance</button>
+    <button class="filter-btn" data-filter="legal">Legal</button>
+    <button class="filter-btn" data-filter="lifestyle">Lifestyle</button>
+    <button class="filter-btn" data-filter="utility">Utility</button>
+    <button class="filter-btn" data-filter="experimental">Experimental</button>
+  </div>
+
+  <div class="products-grid reveal">
+
+    <!-- Stratix Pro -->
+    <div class="product-card" data-category="business">
+      <div class="product-top">
+        <div class="product-logo" style="background:rgba(10,132,255,0.15)">📊</div>
+        <span class="status-badge status-live">Live</span>
+      </div>
+      <div class="product-name">Stratix Pro</div>
+      <div class="product-desc">Complete business management suite. Inventory, invoicing, employee management, POS, analytics — all for Indian SMEs.</div>
+      <div class="product-meta">
+        <div class="product-meta-item"><strong>1.2K+</strong>Downloads</div>
+        <div class="product-meta-item"><strong>₹499</strong>/month</div>
+      </div>
+      <div class="product-actions">
+        <a href="#" class="btn-sm btn-sm-primary">Open App</a>
+        <a href="#" class="btn-sm btn-sm-ghost">Learn More</a>
+      </div>
+    </div>
+
+    <!-- Stratix Lite -->
+    <div class="product-card" data-category="business">
+      <div class="product-top">
+        <div class="product-logo" style="background:rgba(52,199,89,0.15)">📋</div>
+        <span class="status-badge status-live">Live</span>
+      </div>
+      <div class="product-name">Stratix Lite</div>
+      <div class="product-desc">Lightweight business essentials. Perfect for freelancers and small shops that need just the basics, fast.</div>
+      <div class="product-meta">
+        <div class="product-meta-item"><strong>800+</strong>Downloads</div>
+        <div class="product-meta-item"><strong>Free</strong></div>
+      </div>
+      <div class="product-actions">
+        <a href="#" class="btn-sm btn-sm-primary">Open App</a>
+        <a href="#" class="btn-sm btn-sm-ghost">Learn More</a>
+      </div>
+    </div>
+
+    <!-- Stratix One -->
+    <div class="product-card" data-category="business">
+      <div class="product-top">
+        <div class="product-logo" style="background:rgba(255,159,10,0.15)">🚀</div>
+        <span class="status-badge status-beta">Beta</span>
+      </div>
+      <div class="product-name">Stratix One</div>
+      <div class="product-desc">All-in-one unified dashboard. Connect all your Stratix apps in a single command center view.</div>
+      <div class="product-meta">
+        <div class="product-meta-item"><strong>200+</strong>Testers</div>
+        <div class="product-meta-item"><strong>Coming</strong></div>
+      </div>
+      <div class="product-actions">
+        <a href="#" class="btn-sm btn-sm-primary">Join Beta</a>
+        <a href="#" class="btn-sm btn-sm-ghost">Learn More</a>
+      </div>
+    </div>
+
+    <!-- Filio -->
+    <div class="product-card" data-category="utility">
+      <div class="product-top">
+        <div class="product-logo" style="background:rgba(175,82,222,0.15)">📁</div>
+        <span class="status-badge status-beta">Beta</span>
+      </div>
+      <div class="product-name">Filio</div>
+      <div class="product-desc">Smart document organizer. File, tag, and retrieve business documents in seconds with AI-powered search.</div>
+      <div class="product-meta">
+        <div class="product-meta-item"><strong>350+</strong>Downloads</div>
+        <div class="product-meta-item"><strong>₹149</strong>/month</div>
+      </div>
+      <div class="product-actions">
+        <a href="#" class="btn-sm btn-sm-primary">Open App</a>
+        <a href="#" class="btn-sm btn-sm-ghost">Learn More</a>
+      </div>
+    </div>
+
+    <!-- Connect -->
+    <div class="product-card" data-category="utility">
+      <div class="product-top">
+        <div class="product-logo" style="background:rgba(0,212,255,0.15)">💬</div>
+        <span class="status-badge status-live">Live</span>
+      </div>
+      <div class="product-name">Connect</div>
+      <div class="product-desc">Team communication platform built for Indian businesses. Channels, DMs, file sharing, and task mentions.</div>
+      <div class="product-meta">
+        <div class="product-meta-item"><strong>600+</strong>Downloads</div>
+        <div class="product-meta-item"><strong>₹99</strong>/month</div>
+      </div>
+      <div class="product-actions">
+        <a href="#" class="btn-sm btn-sm-primary">Open App</a>
+        <a href="#" class="btn-sm btn-sm-ghost">Learn More</a>
+      </div>
+    </div>
+
+    <!-- Connect Flow -->
+    <div class="product-card" data-category="utility">
+      <div class="product-top">
+        <div class="product-logo" style="background:rgba(0,212,255,0.1)">🔄</div>
+        <span class="status-badge status-beta">Beta</span>
+      </div>
+      <div class="product-name">Connect Flow</div>
+      <div class="product-desc">Workflow automation for Connect. Auto-assign tasks, schedule messages, and trigger smart workflows.</div>
+      <div class="product-meta">
+        <div class="product-meta-item"><strong>150+</strong>Testers</div>
+        <div class="product-meta-item"><strong>₹199</strong>/month</div>
+      </div>
+      <div class="product-actions">
+        <a href="#" class="btn-sm btn-sm-primary">Join Beta</a>
+        <a href="#" class="btn-sm btn-sm-ghost">Learn More</a>
+      </div>
+    </div>
+
+    <!-- GSTLens -->
+    <div class="product-card" data-category="finance">
+      <div class="product-top">
+        <div class="product-logo" style="background:rgba(52,199,89,0.15)">🔍</div>
+        <span class="status-badge status-live">Live</span>
+      </div>
+      <div class="product-name">GSTLens</div>
+      <div class="product-desc">AI-powered GST invoice scanning PWA. Claude Vision + Tesseract OCR extracts invoice data instantly. Firebase + Razorpay integrated.</div>
+      <div class="product-meta">
+        <div class="product-meta-item"><strong>900+</strong>Downloads</div>
+        <div class="product-meta-item"><strong>₹299</strong>/month</div>
+      </div>
+      <div class="product-actions">
+        <a href="#" class="btn-sm btn-sm-primary">Open App</a>
+        <a href="#" class="btn-sm btn-sm-ghost">Learn More</a>
+      </div>
+    </div>
+
+    <!-- MyRight -->
+    <div class="product-card" data-category="legal">
+      <div class="product-top">
+        <div class="product-logo" style="background:rgba(255,69,58,0.15)">⚖️</div>
+        <span class="status-badge status-live">Live</span>
+      </div>
+      <div class="product-name">MyRight</div>
+      <div class="product-desc">AI legal document platform. Generate NDAs, rental agreements, notices, and more in minutes. Subscription tiers with admin chat panel.</div>
+      <div class="product-meta">
+        <div class="product-meta-item"><strong>700+</strong>Downloads</div>
+        <div class="product-meta-item"><strong>₹399</strong>/month</div>
+      </div>
+      <div class="product-actions">
+        <a href="#" class="btn-sm btn-sm-primary">Open App</a>
+        <a href="#" class="btn-sm btn-sm-ghost">Learn More</a>
+      </div>
+    </div>
+
+    <!-- Vivahpatra -->
+    <div class="product-card" data-category="legal">
+      <div class="product-top">
+        <div class="product-logo" style="background:rgba(255,159,10,0.15)">💍</div>
+        <span class="status-badge status-beta">Beta</span>
+      </div>
+      <div class="product-name">Vivahpatra</div>
+      <div class="product-desc">Wedding and marriage legal documents. Generate marriage certificates, consent letters, and legal paperwork for Indian families.</div>
+      <div class="product-meta">
+        <div class="product-meta-item"><strong>200+</strong>Downloads</div>
+        <div class="product-meta-item"><strong>₹199</strong>/month</div>
+      </div>
+      <div class="product-actions">
+        <a href="#" class="btn-sm btn-sm-primary">Open App</a>
+        <a href="#" class="btn-sm btn-sm-ghost">Learn More</a>
+      </div>
+    </div>
+
+    <!-- Grimoire -->
+    <div class="product-card" data-category="lifestyle">
+      <div class="product-top">
+        <div class="product-logo" style="background:rgba(175,82,222,0.15)">🔮</div>
+        <span class="status-badge status-live">Live</span>
+      </div>
+      <div class="product-name">Grimoire</div>
+      <div class="product-desc">Spiritual PWA with Vedic Kundali, Moon Rituals, Sacred Tarot, Cosmic Orrery, 28-Day Cycle & AI guide "Veda". Google Sign-in + Razorpay.</div>
+      <div class="product-meta">
+        <div class="product-meta-item"><strong>1.5K+</strong>Downloads</div>
+        <div class="product-meta-item"><strong>₹199</strong>/month</div>
+      </div>
+      <div class="product-actions">
+        <a href="#" class="btn-sm btn-sm-primary">Open App</a>
+        <a href="#" class="btn-sm btn-sm-ghost">Learn More</a>
+      </div>
+    </div>
+
+    <!-- Builder Boss -->
+    <div class="product-card" data-category="experimental">
+      <div class="product-top">
+        <div class="product-logo" style="background:rgba(10,132,255,0.15)">🏗️</div>
+        <span class="status-badge status-beta">Beta</span>
+      </div>
+      <div class="product-name">Builder Boss</div>
+      <div class="product-desc">No-code app builder for Indian entrepreneurs. Build simple tools, forms, and workflows without writing a single line of code.</div>
+      <div class="product-meta">
+        <div class="product-meta-item"><strong>120+</strong>Testers</div>
+        <div class="product-meta-item"><strong>Coming</strong></div>
+      </div>
+      <div class="product-actions">
+        <a href="#" class="btn-sm btn-sm-primary">Join Beta</a>
+        <a href="#" class="btn-sm btn-sm-ghost">Learn More</a>
+      </div>
+    </div>
+
+    <!-- Soul Story -->
+    <div class="product-card" data-category="experimental lifestyle">
+      <div class="product-top">
+        <div class="product-logo" style="background:rgba(255,159,10,0.15)">✨</div>
+        <span class="status-badge status-coming">Coming Soon</span>
+      </div>
+      <div class="product-name">Soul Story</div>
+      <div class="product-desc">AI-powered personal story creator. Turn your thoughts, memories, and moments into beautifully crafted narratives and legacy content.</div>
+      <div class="product-meta">
+        <div class="product-meta-item"><strong>500+</strong>Waitlist</div>
+        <div class="product-meta-item"><strong>₹299</strong>/month</div>
+      </div>
+      <div class="product-actions">
+        <a href="contact.html" class="btn-sm btn-sm-primary">Join Waitlist</a>
+        <a href="#" class="btn-sm btn-sm-ghost">Learn More</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="padding:0 0 6rem">
+  <div class="cta-section reveal">
+    <h2>Can't find what you need?</h2>
+    <p>We're building more products every month. Reach out and tell us what you need.</p>
+    <a href="contact.html" class="btn-primary">Talk to the Team →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="footer-logo">STRATIX</span>
+      <p>Building intelligent software ecosystems for businesses, professionals, and creators across India.</p>
+      <p style="margin-top:1rem;font-size:0.8rem;color:var(--silver)">Founded by Ananthu Shaji · Lyceum Corporation</p>
+    </div>
+    <div class="footer-col">
+      <h4>Products</h4>
+      <ul>
+        <li><a href="products.html">Stratix Pro</a></li>
+        <li><a href="products.html">GSTLens</a></li>
+        <li><a href="products.html">MyRight</a></li>
+        <li><a href="products.html">Grimoire</a></li>
+        <li><a href="products.html">View All</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="solutions.html">Solutions</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:stratixapp@gmail.com">stratixapp@gmail.com</a></li>
+        <li><a href="https://wa.me/919400802285?text=Hi%20Stratix%2C%20I%20would%20like%20to%20know%20more%20about%20your%20products." target="_blank">WhatsApp Support</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Stratix · Lyceum Corporation. All rights reserved.</p>
+    <p><a href="privacy.html" style="color:var(--silver);text-decoration:none">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
