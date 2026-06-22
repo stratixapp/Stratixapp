@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Login — Stratix Command Center</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background: #010812; }
+  #login-canvas { position: fixed; inset: 0; z-index: 0; }
+  .login-wrap {
+    position: relative; z-index: 2;
+    width: 100%; max-width: 420px;
+    padding: 1rem;
+  }
+  .login-card {
+    background: rgba(9,22,40,0.9);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 3rem;
+    backdrop-filter: blur(30px);
+  }
+  .login-logo {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.8rem; font-weight: 800;
+    letter-spacing: 0.1em;
+    background: linear-gradient(90deg, #fff, var(--electric));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+  .login-sub {
+    text-align: center;
+    color: var(--silver);
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+  }
+  .login-form .form-group { margin-bottom: 1.2rem; }
+  .login-form label { display: block; font-size: 0.78rem; color: var(--silver); margin-bottom: 0.4rem; letter-spacing: 0.06em; }
+  .login-form input {
+    width: 100%;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    padding: 0.9rem 1rem;
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  .login-form input:focus { border-color: var(--blue); }
+  .login-btn {
+    width: 100%;
+    background: var(--blue);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 0.9rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 0.5rem;
+  }
+  .login-btn:hover { background: #0066d6; transform: translateY(-1px); box-shadow: 0 8px 20px rgba(10,132,255,0.4); }
+  .login-error {
+    background: rgba(255,69,58,0.1);
+    border: 1px solid rgba(255,69,58,0.3);
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    color: #ff453a;
+    font-size: 0.85rem;
+    margin-top: 1rem;
+    display: none;
+    text-align: center;
+  }
+  .login-back { text-align: center; margin-top: 1.5rem; }
+  .login-back a { color: var(--silver); font-size: 0.82rem; text-decoration: none; }
+  .login-back a:hover { color: var(--electric); }
+  .security-badge {
+    display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+    margin-top: 2rem;
+    color: var(--silver);
+    font-size: 0.75rem;
+  }
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<canvas id="login-canvas"></canvas>
+
+<div class="login-wrap">
+  <div class="login-card">
+    <span class="login-logo">STRATIX</span>
+    <div class="login-sub">Command Center · Admin Access</div>
+
+    <form class="login-form" onsubmit="doLogin(event)">
+      <div class="form-group">
+        <label>ADMIN USERNAME</label>
+        <input type="text" id="username" placeholder="Enter username" autocomplete="off" required>
+      </div>
+      <div class="form-group">
+        <label>PASSWORD</label>
+        <input type="password" id="password" placeholder="Enter password" required>
+      </div>
+      <button type="submit" class="login-btn">Access Command Center →</button>
+      <div class="login-error" id="loginError">⚠️ Invalid credentials. Access denied.</div>
+    </form>
+
+    <div class="security-badge">🔒 Encrypted · Session Protected · Role Based Access</div>
+    <div class="login-back"><a href="index.html">← Back to Stratix</a></div>
+  </div>
+</div>
+
+<script>
+// Neural canvas
+const lc = document.getElementById('login-canvas');
+lc.width = window.innerWidth; lc.height = window.innerHeight;
+const lctx = lc.getContext('2d');
+const lnodes = Array.from({length:70},()=>({x:Math.random()*lc.width,y:Math.random()*lc.height,vx:(Math.random()-.5)*.5,vy:(Math.random()-.5)*.5,r:Math.random()*2+.5}));
+function drawLoginNet(){
+  lctx.clearRect(0,0,lc.width,lc.height);
+  lnodes.forEach(n=>{n.x+=n.vx;n.y+=n.vy;if(n.x<0||n.x>lc.width)n.vx*=-1;if(n.y<0||n.y>lc.height)n.vy*=-1;});
+  for(let i=0;i<lnodes.length;i++)for(let j=i+1;j<lnodes.length;j++){const dx=lnodes[i].x-lnodes[j].x,dy=lnodes[i].y-lnodes[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<140){lctx.beginPath();lctx.strokeStyle=`rgba(10,132,255,${(1-d/140)*.3})`;lctx.lineWidth=.5;lctx.moveTo(lnodes[i].x,lnodes[i].y);lctx.lineTo(lnodes[j].x,lnodes[j].y);lctx.stroke();}}
+  lnodes.forEach(n=>{lctx.beginPath();lctx.arc(n.x,n.y,n.r,0,Math.PI*2);lctx.fillStyle='rgba(0,212,255,0.5)';lctx.fill();});
+  requestAnimationFrame(drawLoginNet);
+}
+drawLoginNet();
+
+// Cursor
+const cursor=document.getElementById('cursor'),ring=document.getElementById('cursorRing');
+let mx=0,my=0,cx=0,cy=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.transform=`translate(${mx-5}px,${my-5}px)`;});
+setInterval(()=>{cx+=(mx-cx)*.12;cy+=(my-cy)*.12;ring.style.transform=`translate(${cx-18}px,${cy-18}px)`;},16);
+
+// Login
+const ADMIN_USER = 'stratixadmin';
+const ADMIN_PASS = 'Stratix@2025!';
+
+function doLogin(e){
+  e.preventDefault();
+  const u = document.getElementById('username').value;
+  const p = document.getElementById('password').value;
+  const err = document.getElementById('loginError');
+  if(u === ADMIN_USER && p === ADMIN_PASS){
+    sessionStorage.setItem('stratix_admin','true');
+    window.location.href = 'admin.html';
+  } else {
+    err.style.display = 'block';
+    setTimeout(()=>err.style.display='none', 3000);
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solutions — Stratix</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .solution-detail-card {
+    background: var(--card-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 2.5rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2rem;
+    align-items: start;
+    transition: all 0.4s;
+  }
+  .solution-detail-card:hover { border-color: rgba(10,132,255,0.4); transform: translateX(6px); }
+  .sol-icon-lg {
+    width: 72px; height: 72px;
+    border-radius: 18px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2rem;
+    background: var(--blue-glow);
+    border: 1px solid rgba(10,132,255,0.2);
+    flex-shrink: 0;
+  }
+  .sol-body h3 { font-family: 'Syne', sans-serif; font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .sol-body p { color: var(--silver); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1rem; }
+  .sol-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .sol-tag { padding: 0.25rem 0.75rem; background: var(--blue-glow); border: 1px solid rgba(10,132,255,0.2); border-radius: 100px; font-size: 0.75rem; color: var(--electric); }
+  .sol-grid { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 3rem; }
+  @media (max-width: 600px) {
+    .solution-detail-card { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="closeMobile()">Home</a>
+  <a href="products.html" onclick="closeMobile()">Products</a>
+  <a href="about.html" onclick="closeMobile()">About</a>
+  <a href="solutions.html" onclick="closeMobile()">Solutions</a>
+  <a href="contact.html" onclick="closeMobile()">Contact</a>
+</div>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo">STRATIX</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="solutions.html">Solutions</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="login.html" class="nav-cta">Admin</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleMobile()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="section-label">Industry Solutions</div>
+  <h1>Built for Every Business</h1>
+  <p>Whether you run a supermarket, a CA firm, or a construction company — Stratix has a tailored solution for you.</p>
+</div>
+
+<section>
+  <div class="sol-grid reveal">
+
+    <div class="solution-detail-card">
+      <div class="sol-icon-lg">🛒</div>
+      <div class="sol-body">
+        <h3>Retail & Supermarkets</h3>
+        <p>Manage inventory, generate GST invoices, run POS terminals, and track daily sales — all from one dashboard. Stratix Pro handles high-volume retail with ease, including barcode support and supplier management.</p>
+        <div class="sol-tags">
+          <span class="sol-tag">Stratix Pro</span>
+          <span class="sol-tag">GSTLens</span>
+          <span class="sol-tag">Connect</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="solution-detail-card">
+      <div class="sol-icon-lg">📊</div>
+      <div class="sol-body">
+        <h3>CA Firms & Accountants</h3>
+        <p>Scan and extract GST invoice data instantly with GSTLens. Generate client agreements, engagement letters, and legal documents with MyRight. All with audit trails and document versioning.</p>
+        <div class="sol-tags">
+          <span class="sol-tag">GSTLens</span>
+          <span class="sol-tag">MyRight</span>
+          <span class="sol-tag">Filio</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="solution-detail-card">
+      <div class="sol-icon-lg">🏗️</div>
+      <div class="sol-body">
+        <h3>Contractors & Builders</h3>
+        <p>Track project milestones, manage vendor payments, generate work orders, and keep all contracts in one place. Connect Flow automates payment reminders and project update notifications.</p>
+        <div class="sol-tags">
+          <span class="sol-tag">Stratix Pro</span>
+          <span class="sol-tag">MyRight</span>
+          <span class="sol-tag">Connect Flow</span>
+          <span class="sol-tag">Builder Boss</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="solution-detail-card">
+      <div class="sol-icon-lg">🏭</div>
+      <div class="sol-body">
+        <h3>SMEs & Trading Companies</h3>
+        <p>Complete operations management for small and medium enterprises. Manage multiple branches, GST compliance, staff attendance, and generate detailed MIS reports for leadership.</p>
+        <div class="sol-tags">
+          <span class="sol-tag">Stratix Pro</span>
+          <span class="sol-tag">GSTLens</span>
+          <span class="sol-tag">Stratix One</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="solution-detail-card">
+      <div class="sol-icon-lg">💼</div>
+      <div class="sol-body">
+        <h3>Freelancers & Consultants</h3>
+        <p>Stratix Lite gives freelancers the essentials: client invoicing, project tracking, and professional proposals — without the enterprise complexity. Generate NDAs and service agreements instantly with MyRight.</p>
+        <div class="sol-tags">
+          <span class="sol-tag">Stratix Lite</span>
+          <span class="sol-tag">MyRight</span>
+          <span class="sol-tag">Connect</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="solution-detail-card">
+      <div class="sol-icon-lg">🎨</div>
+      <div class="sol-body">
+        <h3>Creators & Digital Entrepreneurs</h3>
+        <p>Soul Story, Builder Boss, and Stratix Lite together give digital creators tools to build, brand, and bill. Tell your story, build your product, and invoice your clients — all within the ecosystem.</p>
+        <div class="sol-tags">
+          <span class="sol-tag">Soul Story</span>
+          <span class="sol-tag">Builder Boss</span>
+          <span class="sol-tag">Stratix Lite</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="solution-detail-card">
+      <div class="sol-icon-lg">💍</div>
+      <div class="sol-body">
+        <h3>Wedding & Events Industry</h3>
+        <p>Vivahpatra handles all the legal documentation for weddings — from pre-wedding agreements to post-ceremony certificates. Built specifically for Indian family law and documentation requirements.</p>
+        <div class="sol-tags">
+          <span class="sol-tag">Vivahpatra</span>
+          <span class="sol-tag">MyRight</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="solution-detail-card">
+      <div class="sol-icon-lg">🔮</div>
+      <div class="sol-body">
+        <h3>Wellness & Spiritual Practitioners</h3>
+        <p>Grimoire provides Vedic astrologers, tarot readers, and wellness coaches with powerful digital tools. Share Kundali reports, moon cycle guidance, and personalized AI readings with clients.</p>
+        <div class="sol-tags">
+          <span class="sol-tag">Grimoire</span>
+          <span class="sol-tag">Connect</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="padding:0 0 6rem">
+  <div class="cta-section reveal">
+    <h2>Find Your Solution</h2>
+    <p>Not sure which products are right for your industry? Talk to us and we'll recommend the perfect Stratix combination.</p>
+    <a href="contact.html" class="btn-primary">Talk to the Team →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="footer-logo">STRATIX</span>
+      <p>Building intelligent software ecosystems for businesses, professionals, and creators across India.</p>
+      <p style="margin-top:1rem;font-size:0.8rem;color:var(--silver)">Founded by Ananthu Shaji · Lyceum Corporation</p>
+    </div>
+    <div class="footer-col"><h4>Products</h4><ul><li><a href="products.html">All Products</a></li></ul></div>
+    <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="privacy.html">Privacy Policy</a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:stratixapp@gmail.com">stratixapp@gmail.com</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Stratix · Lyceum Corporation. All rights reserved.</p>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

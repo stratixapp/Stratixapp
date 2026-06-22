@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Stratix</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .contact-channels { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.2rem; margin-top: 3rem; }
+  .channel-card {
+    background: var(--card-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 2rem;
+    text-decoration: none;
+    color: var(--white);
+    transition: all 0.4s;
+    display: flex; flex-direction: column; gap: 0.8rem;
+  }
+  .channel-card:hover { border-color: var(--blue); transform: translateY(-4px); }
+  .channel-card .ch-icon { font-size: 2rem; }
+  .channel-card h4 { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; }
+  .channel-card p { color: var(--silver); font-size: 0.85rem; line-height: 1.6; }
+  .channel-card span { color: var(--electric); font-size: 0.82rem; font-weight: 600; }
+  .ch-green { border-color: rgba(37,211,102,0.3) !important; }
+  .ch-green:hover { border-color: #25d366 !important; background: rgba(37,211,102,0.05); }
+
+  .main-form-section { display: grid; grid-template-columns: 1fr 1.3fr; gap: 4rem; margin-top: 4rem; }
+  .faq-item { border-bottom: 1px solid var(--glass-border); padding: 1.2rem 0; cursor: pointer; }
+  .faq-q { display: flex; justify-content: space-between; align-items: center; font-weight: 600; }
+  .faq-a { color: var(--silver); font-size: 0.875rem; line-height: 1.7; margin-top: 0.8rem; display: none; }
+  .faq-item.open .faq-a { display: block; }
+  .faq-item.open .faq-arrow { transform: rotate(180deg); }
+  .faq-arrow { transition: transform 0.3s; }
+  .form-success {
+    background: rgba(52,199,89,0.1);
+    border: 1px solid rgba(52,199,89,0.3);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    display: none;
+  }
+  .form-success h4 { color: #34c759; font-family: 'Syne', sans-serif; margin-bottom: 0.5rem; }
+  @media (max-width: 900px) {
+    .main-form-section { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="closeMobile()">Home</a>
+  <a href="products.html" onclick="closeMobile()">Products</a>
+  <a href="about.html" onclick="closeMobile()">About</a>
+  <a href="solutions.html" onclick="closeMobile()">Solutions</a>
+  <a href="contact.html" onclick="closeMobile()">Contact</a>
+</div>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo">STRATIX</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="solutions.html">Solutions</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="login.html" class="nav-cta">Admin</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleMobile()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="section-label">Get in Touch</div>
+  <h1>We'd Love to Hear From You</h1>
+  <p>Questions about products, pricing, partnerships, or just want to say hello — we're always here.</p>
+</div>
+
+<section style="padding-top:0">
+  <!-- CHANNELS -->
+  <div class="contact-channels reveal">
+    <a href="https://wa.me/919400802285?text=Hi%20Stratix%20Team%2C%0A%0AI%20am%20interested%20in%20learning%20more%20about%20your%20software%20products.%20Could%20you%20please%20guide%20me%20on%20which%20solution%20would%20be%20best%20suited%20for%20my%20business%3F%0A%0AThank%20you." target="_blank" class="channel-card ch-green">
+      <span class="ch-icon">💬</span>
+      <h4>WhatsApp Support</h4>
+      <p>Fastest response. Chat directly with the Stratix team. We typically reply within minutes.</p>
+      <span>+91 9400802285 → Open Chat</span>
+    </a>
+    <a href="mailto:stratixapp@gmail.com" class="channel-card">
+      <span class="ch-icon">📧</span>
+      <h4>General Enquiries</h4>
+      <p>Product questions, demo requests, or general information about the Stratix ecosystem.</p>
+      <span>stratixapp@gmail.com</span>
+    </a>
+    <a href="mailto:stratixechosystem1@gmail.com" class="channel-card">
+      <span class="ch-icon">🤝</span>
+      <h4>Business Partnerships</h4>
+      <p>Reseller partnerships, enterprise licensing, integration requests, and collaboration opportunities.</p>
+      <span>stratixechosystem1@gmail.com</span>
+    </a>
+    <a href="mailto:stratixgrowup@gmail.com" class="channel-card">
+      <span class="ch-icon">🛠️</span>
+      <h4>Technical Support</h4>
+      <p>Bug reports, technical issues, billing queries, and account-related support requests.</p>
+      <span>stratixgrowup@gmail.com</span>
+    </a>
+  </div>
+
+  <!-- MAIN: FORM + FAQ -->
+  <div class="main-form-section reveal">
+    <!-- LEFT: FAQ -->
+    <div>
+      <div class="section-label">FAQ</div>
+      <div class="section-title" style="font-size:1.8rem">Common Questions</div>
+      <div style="margin-top:2rem">
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-q">How do I get started with Stratix? <span class="faq-arrow">▼</span></div>
+          <div class="faq-a">Visit our Products page, pick any app, and start for free. No credit card required for free tier. Upgrade when you need more.</div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-q">Are your apps available on Play Store? <span class="faq-arrow">▼</span></div>
+          <div class="faq-a">Yes — Stratix Pro, GSTLens, MyRight, and Grimoire are all available on the Play Store via TWA. Search "Stratix" on Google Play.</div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-q">Do you offer a free trial? <span class="faq-arrow">▼</span></div>
+          <div class="faq-a">Every Stratix product has a generous free tier. You can use core features for free indefinitely and upgrade to Pro for advanced capabilities.</div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-q">Is my data safe? <span class="faq-arrow">▼</span></div>
+          <div class="faq-a">Absolutely. We use Firebase with strict Firestore security rules, encrypted authentication, and never sell user data to third parties. Read our Privacy Policy for full details.</div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-q">How do I pay? What payment methods are accepted? <span class="faq-arrow">▼</span></div>
+          <div class="faq-a">We accept UPI, cards, net banking, and wallets via Razorpay — India's most trusted payment gateway.</div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-q">Can I request a custom feature? <span class="faq-arrow">▼</span></div>
+          <div class="faq-a">Yes! Send us your request via WhatsApp or email. We prioritize features that serve the most users, and enterprise clients can request custom builds.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: FORM -->
+    <div class="contact-form-wrap">
+      <h3 style="font-family:'Syne',sans-serif;font-size:1.4rem;margin-bottom:0.5rem">Send a Message</h3>
+      <p style="color:var(--silver);font-size:0.85rem;margin-bottom:2rem">We read every message and respond within 24 hours.</p>
+      <div id="formSuccess" class="form-success">
+        <h4>✅ Message Received!</h4>
+        <p style="color:var(--silver);font-size:0.875rem">Thank you for reaching out. We'll get back to you within 24 hours. For faster support, WhatsApp us.</p>
+      </div>
+      <form id="contactForm" onsubmit="submitForm(event)">
+        <div class="form-group">
+          <label>Full Name *</label>
+          <input type="text" placeholder="Your full name" required>
+        </div>
+        <div class="form-group">
+          <label>Email Address *</label>
+          <input type="email" placeholder="your@email.com" required>
+        </div>
+        <div class="form-group">
+          <label>Phone / WhatsApp</label>
+          <input type="tel" placeholder="+91 XXXXX XXXXX">
+        </div>
+        <div class="form-group">
+          <label>Type of Enquiry</label>
+          <select>
+            <option>General Information</option>
+            <option>Product Demo</option>
+            <option>Business Partnership</option>
+            <option>Technical Support</option>
+            <option>Enterprise Pricing</option>
+            <option>Feature Request</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message *</label>
+          <textarea placeholder="Tell us how we can help..." required></textarea>
+        </div>
+        <button type="submit" class="btn-primary" style="width:100%;justify-content:center">Send Message →</button>
+      </form>
+
+      <a href="https://wa.me/919400802285?text=Hi%20Stratix%20Team%2C%0A%0AI%20am%20interested%20in%20learning%20more%20about%20your%20software%20products.%20Could%20you%20please%20guide%20me%20on%20which%20solution%20would%20be%20best%20suited%20for%20my%20business%3F%0A%0AThank%20you." target="_blank" class="whatsapp-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Chat on WhatsApp — Instant Reply
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="footer-logo">STRATIX</span>
+      <p>Building intelligent software ecosystems for businesses, professionals, and creators across India.</p>
+      <p style="margin-top:1rem;font-size:0.8rem;color:var(--silver)">Founded by Ananthu Shaji · Lyceum Corporation</p>
+    </div>
+    <div class="footer-col"><h4>Products</h4><ul><li><a href="products.html">All Products</a></li></ul></div>
+    <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="privacy.html">Privacy Policy</a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:stratixapp@gmail.com">stratixapp@gmail.com</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Stratix · Lyceum Corporation. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+function toggleFaq(el) {
+  el.classList.toggle('open');
+}
+function submitForm(e) {
+  e.preventDefault();
+  document.getElementById('contactForm').style.display = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
+}
+</script>
+</body>
+</html>

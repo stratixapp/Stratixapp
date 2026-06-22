@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Stratix</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .founder-card {
+    background: var(--card-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 3rem;
+    display: flex;
+    gap: 2.5rem;
+    align-items: flex-start;
+    margin-top: 3rem;
+  }
+  .founder-avatar {
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--blue), var(--electric));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2.5rem;
+    flex-shrink: 0;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    color: #fff;
+  }
+  .founder-info h3 { font-family: 'Syne', sans-serif; font-size: 1.6rem; font-weight: 800; margin-bottom: 0.3rem; }
+  .founder-title { color: var(--electric); font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.2rem; }
+  .founder-info p { color: var(--silver); line-height: 1.8; font-size: 0.95rem; }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .value-card {
+    background: var(--card-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.4s;
+  }
+  .value-card:hover { border-color: var(--blue); transform: translateY(-4px); }
+  .value-card .icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+  .value-card h4 { font-family: 'Syne', sans-serif; font-weight: 700; margin-bottom: 0.5rem; }
+  .value-card p { color: var(--silver); font-size: 0.85rem; line-height: 1.6; }
+
+  @media (max-width: 768px) {
+    .founder-card { flex-direction: column; }
+    .values-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="closeMobile()">Home</a>
+  <a href="products.html" onclick="closeMobile()">Products</a>
+  <a href="about.html" onclick="closeMobile()">About</a>
+  <a href="solutions.html" onclick="closeMobile()">Solutions</a>
+  <a href="contact.html" onclick="closeMobile()">Contact</a>
+</div>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo">STRATIX</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="solutions.html">Solutions</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="login.html" class="nav-cta">Admin</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleMobile()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="section-label">Our Story</div>
+  <h1>About Stratix</h1>
+  <p>A software ecosystem built from a single belief: Indian businesses deserve world-class tools at prices that make sense.</p>
+</div>
+
+<section>
+  <!-- FOUNDER -->
+  <div class="section-label">Leadership</div>
+  <div class="section-title">Founded With Purpose</div>
+  <div class="founder-card reveal">
+    <div class="founder-avatar">AS</div>
+    <div class="founder-info">
+      <h3>Ananthu Shaji</h3>
+      <div class="founder-title">Founder & CEO · Lyceum Corporation</div>
+      <p>
+        Ananthu Shaji founded Stratix with a clear mission: to build premium software products that genuinely serve Indian businesses, professionals, and creators — without the complexity or cost of enterprise tools designed for Western markets.
+      </p>
+      <p style="margin-top:0.8rem">
+        Operating under Lyceum Corporation, Stratix has grown from a single idea into a full ecosystem of 12 products spanning legal tech, GST/fintech, business management, spiritual wellness, and creative tools. Every product is built mobile-first, integrated with India's payment and compliance infrastructure, and designed to work as well offline as it does online.
+      </p>
+      <p style="margin-top:0.8rem">
+        The vision: a unified, trusted software brand that Indian entrepreneurs and professionals choose first.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="metrics-section">
+  <div class="section-label" style="text-align:center">Journey</div>
+  <div class="section-title" style="text-align:center">Vision to Reality</div>
+  <div class="timeline reveal" style="margin-top:4rem">
+    <div class="timeline-step">
+      <div class="timeline-dot">💡</div>
+      <h4>Vision</h4>
+      <p>Identified the gap in India's software market — premium tools at accessible prices.</p>
+    </div>
+    <div class="timeline-step">
+      <div class="timeline-dot">🛠️</div>
+      <h4>Build</h4>
+      <p>Developed the core stack: Firebase, Razorpay, Anthropic AI — the Stratix foundation.</p>
+    </div>
+    <div class="timeline-step">
+      <div class="timeline-dot">🚀</div>
+      <h4>Launch</h4>
+      <p>Shipped the first wave of products: Stratix Pro, GSTLens, MyRight, and Grimoire.</p>
+    </div>
+    <div class="timeline-step">
+      <div class="timeline-dot">📈</div>
+      <h4>Expand</h4>
+      <p>Growing the ecosystem to 12 products across business, legal, finance, and lifestyle.</p>
+    </div>
+    <div class="timeline-step">
+      <div class="timeline-dot">🌐</div>
+      <h4>Scale</h4>
+      <p>Play Store presence, TWA apps, multilingual support, and pan-India expansion.</p>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section>
+  <div class="section-label">What We Stand For</div>
+  <div class="section-title">Our Core Values</div>
+  <div class="values-grid reveal">
+    <div class="value-card">
+      <span class="icon">🎯</span>
+      <h4>Product First</h4>
+      <p>We ship products that actually work. No vaporware. No half-built launches. Quality over hype, always.</p>
+    </div>
+    <div class="value-card">
+      <span class="icon">🇮🇳</span>
+      <h4>India Native</h4>
+      <p>Built with Indian payment rails, GST compliance, and local market realities baked in from day one.</p>
+    </div>
+    <div class="value-card">
+      <span class="icon">🔒</span>
+      <h4>Security First</h4>
+      <p>Every product ships with Firebase security rules, encrypted auth, and XSS protections as defaults.</p>
+    </div>
+    <div class="value-card">
+      <span class="icon">♾️</span>
+      <h4>Always Improving</h4>
+      <p>We iterate fast, listen to users, and push updates that matter — not just cosmetic changes.</p>
+    </div>
+    <div class="value-card">
+      <span class="icon">💸</span>
+      <h4>Fair Pricing</h4>
+      <p>Freemium models that let you start for free and upgrade when the value is clear. No tricks.</p>
+    </div>
+    <div class="value-card">
+      <span class="icon">🤝</span>
+      <h4>User Respect</h4>
+      <p>No dark patterns. No forced upgrades. No selling your data. Your trust is the product.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="padding:0 0 6rem">
+  <div class="cta-section reveal">
+    <h2>Join the Ecosystem</h2>
+    <p>Whether you're a business owner, CA, creator, or professional — there's a Stratix product built for you.</p>
+    <div class="btn-group" style="justify-content:center">
+      <a href="products.html" class="btn-primary">Explore Products →</a>
+      <a href="contact.html" class="btn-secondary">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="footer-logo">STRATIX</span>
+      <p>Building intelligent software ecosystems for businesses, professionals, and creators across India.</p>
+      <p style="margin-top:1rem;font-size:0.8rem;color:var(--silver)">Founded by Ananthu Shaji · Lyceum Corporation</p>
+    </div>
+    <div class="footer-col"><h4>Products</h4><ul><li><a href="products.html">All Products</a></li></ul></div>
+    <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="privacy.html">Privacy Policy</a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:stratixapp@gmail.com">stratixapp@gmail.com</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Stratix · Lyceum Corporation. All rights reserved.</p>
+    <p><a href="privacy.html" style="color:var(--silver);text-decoration:none">Privacy Policy</a></p>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
